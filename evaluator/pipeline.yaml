@@ -1,0 +1,17 @@
+trigger:
+  - main # TODO: this trigger should be running j2kTask
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+  - stage: Build
+    displayName: 'Build Stage'
+    jobs:
+      - job: BuildJob
+        displayName: 'Build Job'
+        steps:
+          - script: cd ../ 
+              ./gradlew :module:javaVersion 
+              echo "Running javaVersion's unit tests on itself..."
+            displayName: 'Unit tests: javaVersion on Java code'
