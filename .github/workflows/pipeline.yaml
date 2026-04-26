@@ -1,4 +1,4 @@
-name: Run Tests
+name: Run Tests # Meaningless change to trigger pipeline using push
 
 on: push
 
