@@ -12,5 +12,6 @@ jobs:
       - name: "Unit tests: javaVersion on Java code"
         working-directory: ./javaVersion
         run: |
+          chmod +x gradlew
           ./gradlew test
           echo "Running javaVersion's unit tests on itself..."
