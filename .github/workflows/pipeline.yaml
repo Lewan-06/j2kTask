@@ -1,17 +1,16 @@
-name: Run Tests # Meaningless change to trigger pipeline using push
+steps:
+  - name: "Checkout code"
+    uses: actions/checkout@v4  # Use v4 for stability
 
-on: push
+  - name: "Debug: Show me the files"
+    run: |
+      echo "Current location:"
+      pwd
+      echo "Listing all files in the repository:"
+      find . -maxdepth 2 -not -path '*/.*'
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Checkout code"
-        uses: actions/checkout@v6
-
-      - name: "Unit tests: javaVersion on Java code"
-        working-directory: ./javaVersion
-        run: |
-          chmod +x gradlew
-          ./gradlew test
-          echo "Running javaVersion's unit tests on itself..."
+  - name: "Unit tests: javaVersion on Java code"
+    working-directory: ./javaVersion
+    run: |
+      chmod +x gradlew
+      ./gradlew test
