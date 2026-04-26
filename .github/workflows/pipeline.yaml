@@ -7,10 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout code"
-      - uses: actions/checkout@v6
+        uses: actions/checkout@v4
+
+      - name: "Debug: Show me the files"
+        run: |
+          echo "Current location:"
+          pwd
+          echo "Listing all files in the repository:"
+          find . -maxdepth 2 -not -path '*/.*'
 
       - name: "Unit tests: javaVersion on Java code"
-      - run: |
-          cd ../
-          ./gradlew :module:javaVersion
-          echo "Running javaVersion's unit tests on itself..."
+        working-directory: ./javaVersion
+        run: |
+          chmod +x gradlew
+          ./gradlew test
