@@ -1,0 +1,16 @@
+name: Run Tests
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout code"
+      - uses: actions/checkout@v6
+
+      - name: "Unit tests: javaVersion on Java code"
+      - run: |
+          cd ../
+          ./gradlew :module:javaVersion
+          echo "Running javaVersion's unit tests on itself..."
