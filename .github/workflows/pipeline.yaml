@@ -10,6 +10,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: "Unit tests: javaVersion on Java code"
+        working-directory: ./javaVersion
         run: |
           ./gradlew :module:javaVersion
           echo "Running javaVersion's unit tests on itself..."
