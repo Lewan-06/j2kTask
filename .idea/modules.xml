@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/evaluator/evaluator.iml" filepath="$PROJECT_DIR$/evaluator/evaluator.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/j2kTask.iml" filepath="$PROJECT_DIR$/.idea/j2kTask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/realworld-spring-boot-java.main.iml" filepath="$PROJECT_DIR$/.idea/modules/realworld-spring-boot-java.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/realworld-spring-boot-java.test.iml" filepath="$PROJECT_DIR$/.idea/modules/realworld-spring-boot-java.test.iml" />
     </modules>
   </component>
 </project>

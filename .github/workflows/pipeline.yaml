@@ -18,4 +18,23 @@ jobs:
 
       - name: "Unit tests: javaVersion on Java code"
         working-directory: ./javaVersion
-        run: ./gradlew test
+        run: |
+          chmod +x gradlew
+          ./gradlew test
+
+      - name: "Unit tests: kotlinVersion on Kotlin code"
+        working-directory: ./kotlinVersion
+        run: |
+          chmod +x gradlew
+          ./gradlew test
+
+# TODO: Ideally execute J2K here inline (without extra j2kVersion folder to save space)
+## In that case, update all references to j2kVersion to javaVersion in block below
+
+      - name: "Unit tests: j2kVersion on j2k code"
+        working-directory: ./j2kVersion
+        run: |
+          chmod +x gradlew
+          ./gradlew test
+
+## End of block
