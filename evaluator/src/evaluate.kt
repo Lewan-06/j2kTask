@@ -49,7 +49,7 @@ fun main(args: Array<String>) {
 
     // Write to report.md
     try {
-        File("report.md").writeText(reportContent.toString())
+        File("../report.md").writeText(reportContent.toString())
         println("Evaluation complete. Report generated at: report.md")
     } catch (e: Exception) {
         println("Error writing report file: ${e.message}")
