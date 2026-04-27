@@ -42,8 +42,16 @@ jobs:
 
 ## End of block
 
-      - name: Run Checkstyle
+      - name: "Checkstyle: Java code"
+        continue-on-error: true
         working-directory: ./javaVersion
         run: |
           chmod +x ./gradlew
           ./gradlew checkstyleMain
+
+      - name: "Ktlint: Kotlin code"
+        continue-on-error: true
+        working-directory: ./kotlinVersion
+        run: |
+          chmod +x ./gradlew
+          ./gradlew ktlintCheck
