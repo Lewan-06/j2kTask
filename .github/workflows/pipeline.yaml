@@ -40,4 +40,18 @@ jobs:
           chmod +x ./gradlew
           ./gradlew test
 
+      - name: "Ktlint: j2k code"
+        continue-on-error: true
+        working-directory: ./j2kVersion
+        run: |
+          chmod +x ./gradlew
+          ./gradlew ktlintCheck
+
 ## End of block
+
+      - name: "Checkstyle: Java code"
+        continue-on-error: true
+        working-directory: ./javaVersion
+        run: |
+          chmod +x ./gradlew
+          ./gradlew checkstyleMain
