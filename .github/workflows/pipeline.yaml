@@ -18,6 +18,4 @@ jobs:
 
       - name: "Unit tests: javaVersion on Java code"
         working-directory: ./javaVersion
-        run: |
-          chmod +x gradlew
-          ./gradlew test
+        run: ./gradlew test
