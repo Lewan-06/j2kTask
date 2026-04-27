@@ -20,14 +20,14 @@ jobs:
         continue-on-error: true
         working-directory: ./javaVersion
         run: |
-          chmod +x gradlew
+          chmod +x ./gradlew
           ./gradlew test
 
       - name: "Unit tests: kotlinVersion on Kotlin code"
         continue-on-error: true
         working-directory: ./kotlinVersion
         run: |
-          chmod +x gradlew
+          chmod +x ./gradlew
           ./gradlew test
 
 # TODO: Ideally execute J2K here inline (without extra j2kVersion folder to save space)
@@ -37,7 +37,7 @@ jobs:
         continue-on-error: true
         working-directory: ./j2kVersion
         run: |
-          chmod +x gradlew
+          chmod +x ./gradlew
           ./gradlew test
 
 ## End of block
