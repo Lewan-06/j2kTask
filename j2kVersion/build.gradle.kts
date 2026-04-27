@@ -11,6 +11,14 @@ plugins {
     id("com.google.cloud.tools.jib") version "3.2.1"
     id("org.flywaydb.flyway") version "8.5.11"
     jacoco
+
+    id("org.jlleitschuh.gradle.ktlint") version "11.1.0" // Closest version to checkstyle 12.3.1
+}
+
+ktlint {  // Closest version to checkstyle 12.3.1
+    version.set("0.45.2")
+    android.set(true)
+    verbose.set(true)
 }
 
 group = "io.github.raeperd"

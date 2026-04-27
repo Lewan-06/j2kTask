@@ -40,6 +40,13 @@ jobs:
           chmod +x ./gradlew
           ./gradlew test
 
+      - name: "Ktlint: j2k code"
+        continue-on-error: true
+        working-directory: ./j2kVersion
+        run: |
+          chmod +x ./gradlew
+          ./gradlew ktlintCheck
+
 ## End of block
 
       - name: "Checkstyle: Java code"
@@ -48,10 +55,3 @@ jobs:
         run: |
           chmod +x ./gradlew
           ./gradlew checkstyleMain
-
-      - name: "Ktlint: Kotlin code"
-        continue-on-error: true
-        working-directory: ./kotlinVersion
-        run: |
-          chmod +x ./gradlew
-          ./gradlew ktlintCheck

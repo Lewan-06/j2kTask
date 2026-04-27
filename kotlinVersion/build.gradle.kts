@@ -12,10 +12,10 @@ plugins {
     id("org.flywaydb.flyway") version "8.5.11"
     jacoco
 
-    id("org.jlleitschuh.gradle.ktlint") version "11.1.0"
+    id("org.jlleitschuh.gradle.ktlint") version "11.1.0" // Closest version to checkstyle 12.3.1
 }
 
-ktlint {
+ktlint {  // Closest version to checkstyle 12.3.1
     version.set("0.45.2")
     android.set(true)
     verbose.set(true)
