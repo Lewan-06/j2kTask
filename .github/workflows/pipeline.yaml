@@ -55,3 +55,8 @@ jobs:
         run: |
           chmod +x ./gradlew
           ./gradlew checkstyleMain
+
+      - name: Running of evaluator
+        run: |
+          kotlinc evaluator/src/evaluate.kt -include-runtime -d evaluator.jar
+          java -jar evaluator.jar
