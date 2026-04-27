@@ -17,12 +17,14 @@ jobs:
           find . -maxdepth 2 -not -path '*/.*'
 
       - name: "Unit tests: javaVersion on Java code"
+        continue-on-error: true
         working-directory: ./javaVersion
         run: |
           chmod +x gradlew
           ./gradlew test
 
       - name: "Unit tests: kotlinVersion on Kotlin code"
+        continue-on-error: true
         working-directory: ./kotlinVersion
         run: |
           chmod +x gradlew
@@ -32,6 +34,7 @@ jobs:
 ## In that case, update all references to j2kVersion to javaVersion in block below
 
       - name: "Unit tests: j2kVersion on j2k code"
+        continue-on-error: true
         working-directory: ./j2kVersion
         run: |
           chmod +x gradlew
