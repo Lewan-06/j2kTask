@@ -27,8 +27,6 @@ jobs:
         continue-on-error: true
         working-directory: ./kotlinVersion
         run: |
-          echo "Current Directory: $(pwd)"
-          ls -R
           chmod +x ./gradlew
           ./gradlew test
 
@@ -39,8 +37,6 @@ jobs:
         continue-on-error: true
         working-directory: ./j2kVersion
         run: |
-          echo "Current Directory: $(pwd)"
-          ls -R
           chmod +x ./gradlew
           ./gradlew test
 
