@@ -41,3 +41,9 @@ jobs:
           ./gradlew test
 
 ## End of block
+
+      - name: Run Checkstyle
+        working-directory: ./javaVersion
+        run: |
+          chmod +x ./gradlew
+          ./gradlew checkstyleMain
